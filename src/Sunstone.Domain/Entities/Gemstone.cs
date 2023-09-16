@@ -1,23 +1,17 @@
 ﻿namespace Sunstone.Domain
 {
-    internal class Gemstone
+    public class Gemstone
     {
         public Guid Id { get; set; }
         public DateTime Created { get; set; }
         public string Name { get; private set; }
         public Colors Color { get; private set; }
 
-        public Gemstone(string name, decimal carat, decimal clarity, Colors color)
+        public Gemstone(string name, Colors color)
         {
             if (string.IsNullOrWhiteSpace(name))
                 throw new DomainException("name cannot be empty or null.");
-
-            if (carat <= 0)
-                throw new DomainException("carat cannot be under or equal to zero.");
-
-            if (clarity <= 0)
-                throw new DomainException("clarity cannot be under or equal to zero.");
-
+         
             if (IsColorEnum(color) is false)
                 throw new DomainException("color cannot be different from preset colors.");
 
@@ -31,7 +25,7 @@
         /// </summary>
         /// <param name="color"></param>
         /// <returns></returns>
-        public static bool IsColorEnum(Colors color)
+        private static bool IsColorEnum(Colors color)
         {
             if ((color & Colors.All) == color)
                 return (true);
