@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sunstone.Domain", "src\Sunstone.Domain\Sunstone.Domain.csproj", "{C1650E9F-09A5-4642-924D-5E5997686B78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sunstone.Domain", "src\Sunstone.Domain\Sunstone.Domain.csproj", "{C1650E9F-09A5-4642-924D-5E5997686B78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sunstone.Application", "src\Sunstone.Application\Sunstone.Application.csproj", "{8504B28B-5011-405F-9AC3-5BACFBD415A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sunstone.Application", "src\Sunstone.Application\Sunstone.Application.csproj", "{8504B28B-5011-405F-9AC3-5BACFBD415A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sunstone.Infra", "src\Sunstone.Infra\Sunstone.Infra.csproj", "{5DE7C163-7105-49D0-B772-974CD68DC496}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sunstone.Infra", "src\Sunstone.Infra\Sunstone.Infra.csproj", "{5DE7C163-7105-49D0-B772-974CD68DC496}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sunstone.Api", "src\Sunstone.Api\Sunstone.Api.csproj", "{D0A543C2-C620-4864-A726-5A86B77E1B12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sunstone.Api", "src\Sunstone.Api\Sunstone.Api.csproj", "{D0A543C2-C620-4864-A726-5A86B77E1B12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sunstone.Tests", "tests\Sunstone.Tests\Sunstone.Tests.csproj", "{A40B06B2-4F75-4DC3-9D92-9CD883DD8E93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{D0A543C2-C620-4864-A726-5A86B77E1B12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0A543C2-C620-4864-A726-5A86B77E1B12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0A543C2-C620-4864-A726-5A86B77E1B12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A40B06B2-4F75-4DC3-9D92-9CD883DD8E93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A40B06B2-4F75-4DC3-9D92-9CD883DD8E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A40B06B2-4F75-4DC3-9D92-9CD883DD8E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A40B06B2-4F75-4DC3-9D92-9CD883DD8E93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
