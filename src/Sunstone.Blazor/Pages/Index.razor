@@ -1,0 +1,55 @@
+﻿@page "/"
+
+<PageTitle>Sunstone Project</PageTitle>
+
+@using MudBlazor
+@using Sunstone.Blazor.Data;
+@using Sunstone.Domain;
+@inject GemstoneService GemstoneService
+@inject NavigationManager NavigationManager
+
+<p style="margin-left:10px; font-size:16px">Project Sunstone is an example of clean architecture built with .NET and Blazor.</p>
+<MudContainer>
+    <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Add" Color="Color.Primary" Label="Create Gemstone" Class="ma-2" @onclick="(e => CreateAsync())" FullWidth="true">Create Gemstone</MudButton>
+</MudContainer>
+<br>
+<MudTable Items="@gemstones">
+    <HeaderContent>
+        <MudTh>Name</MudTh>
+        <MudTh>Color</MudTh>
+        <MudTh>Created</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Name">@context.Name</MudTd>
+        <MudTd DataLabel="Color">@context.Color</MudTd>
+        <MudTd DataLabel="Date">@context.Created</MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager />
+    </PagerContent>
+</MudTable>
+
+
+@code {
+    private IEnumerable<Gemstone> gemstones;
+
+    protected override async Task OnInitializedAsync()
+    {
+        gemstones = await GemstoneService.GetGemstoneAsync();
+
+        if(gemstones.Count() is 0)
+        {
+            gemstones = new List<Gemstone>()
+            {
+                new Gemstone("Jade", Domain.Colors.Green),
+                new Gemstone("Ruby", Domain.Colors.Red),
+                new Gemstone("Amethyst ", Domain.Colors.Purple),
+            };            
+        }
+
+    }
+
+    private void CreateAsync()
+        => NavigationManager.NavigateTo("/gemstone");
+
+}

@@ -4,8 +4,8 @@
     {
         public Guid Id { get; set; }
         public DateTime Created { get; set; }
-        public string Name { get; private set; }
-        public Colors Color { get; private set; }
+        public string Name { get; set; }
+        public Colors Color { get; set; }
 
         public Gemstone(string name, Colors color)
         {
@@ -17,6 +17,7 @@
 
             Name = name;
             Color = color;
+            Created = DateTime.Now;
         }
 
         /// <summary>
