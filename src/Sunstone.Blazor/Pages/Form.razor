@@ -1,0 +1,53 @@
+﻿@page "/gemstone"
+
+<PageTitle>Form</PageTitle>
+
+@using MudBlazor
+@using Sunstone.Blazor.Data;
+@inject GemstoneService GemstoneService
+@inject NavigationManager NavigationManager
+
+<MudGrid>
+    <MudItem xs="12" sm="12">
+        <MudPaper Class="pa-4">
+            <MudForm @ref="form" @onsubmit="HandleValidSubmit">
+                <MudTextField T="string" @bind-Value="model.Name" Label="Name" Required="true" RequiredError="Name is required!" />
+                <MudSelect T="string" Label="Color" AnchorOrigin="Origin.BottomCenter" @bind-Value="model.Color">
+                    <MudSelectItem Value="@("Red")"/>
+                    <MudSelectItem Value="@("Black")" />
+                    <MudSelectItem Value="@("Bicolor")" />
+                    <MudSelectItem Value="@("Blue")" />
+                    <MudSelectItem Value="@("Brown")" />
+                    <MudSelectItem Value="@("Colourless")" />
+                    <MudSelectItem Value="@("Green")" />
+                    <MudSelectItem Value="@("Yellow")" />
+                    <MudSelectItem Value="@("Gray")" />
+                    <MudSelectItem Value="@("Purple")" />
+                    <MudSelectItem Value="@("White")" />
+                    <MudSelectItem Value="@("Multicolor")" />
+                    <MudSelectItem Value="@("Pink")" />
+                    <MudSelectItem Value="@("Orange")" />
+                    <MudSelectItem Value="@("All")" />
+                </MudSelect>
+                <MudCardActions>
+                    <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Submit</MudButton>
+                </MudCardActions>
+            </MudForm>
+        </MudPaper>
+    </MudItem>
+
+</MudGrid>
+
+@code {
+    MudForm form;
+    private Model model = new();
+
+    private async void HandleValidSubmit()
+    {
+        var result = await GemstoneService.PostGemstoneAsync(model);
+
+        if (result)
+            NavigationManager.NavigateTo("/");
+
+    }
+}

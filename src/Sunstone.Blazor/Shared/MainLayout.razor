@@ -1,0 +1,18 @@
+﻿@using MudBlazor
+@inherits LayoutComponentBase
+
+<PageTitle>Sunstone.Blazor</PageTitle>
+
+<MudThemeProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    <MudAppBar Color="Color.Primary">
+          <MudIconButton Icon="@Icons.Rounded.CloudCircle" Color="Color.Inherit" Href="/"/>
+          <MudText Typo="Typo.h4">Gemstone Project </MudText>
+    </MudAppBar>
+    <MudMainContent class="mt-4">
+        @Body
+    </MudMainContent>
+</MudLayout>
