@@ -5,6 +5,7 @@ Our project is based on clean architecture and aims to manage the gemstone domai
 ###### ASP.NET Core 6 application with Clean Architecture based on the [uncle bob's article](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
 ---
+
 ### 🛠 Technologies
 The following tools were used to build the project:
 - [NET 6](https://dotnet.microsoft.com/en-us/)
